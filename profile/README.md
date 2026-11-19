@@ -1,25 +1,47 @@
-<h1 align="center">t◎kenhunt</h1>
+# tokenhunt
 
-<p align="center">
-  <strong>Catch secrets at chat time, not commit time.</strong><br>
-  Local-first secret scanning for AI coding agents. Fail-closed. Zero cloud, zero telemetry.
-</p>
+**Catch secrets at chat time, not commit time.**
 
-| project | what it is |
+Secret scanning for AI coding agents. Six hooks, fail-closed, zero cloud,
+zero telemetry. The transcript is the leak surface.
+
+| | |
 |---|---|
-| **[token-hunt](https://github.com/tokenhunt/token-hunt)** | The engine — six hooks, 48 rules across 53 provider families, CLI (`scan / list / close / watch`), bash escape-hatch runtime detector |
-| **[pat-scanner](https://github.com/tokenhunt/pat-scanner)** | The one-command Claude Code plugin — one hook, 13 credential classes, regex matching |
-| **token-hunt-pro** | Silent redaction + active verification (GitHub / Stripe / Slack), offline ed25519 licensing — commercial |
+| Site | <https://tokenhunt.dev> |
+| Docs | <https://tokenhunt.dev/docs> |
+| Changelog | <https://tokenhunt.dev/changelog> |
+| X | [@tokenhuntdev](https://x.com/tokenhuntdev) |
+| Email | info@tokenhunt.dev |
+| License | BUSL-1.1 · MIT in 2030 · commercial by agreement |
 
+## The products
+
+**Engine**
+
+- [`token-hunt`](https://github.com/tokenhunt/token-hunt) — the CLI
+  (`scan / list / close / watch`), six hooks with block-and-rotate behavior,
+  the allowlist, and the bash escape-hatch runtime detector no regex can see
+
+**Plugins**
+
+- [`pat-scanner`](https://github.com/tokenhunt/pat-scanner) — the
+  one-command Claude Code plugin: one hook, 13 credential classes, regex
+  matching. The guard, without the workflow.
+
+**Commercial**
+
+- `token-hunt-pro` — silent redaction (the agent never sees the raw value)
+  + active verification against GitHub / Stripe / Slack, offline ed25519
+  licensing. Zero phone-home.
+
+## The checkable claims
+
+- 48 credential rules across 53 provider families, local-only
+- BLOCK hooks stop the tool call before it runs, not after it logs
+- the escape-hatch class (`${VAR:+SET}${VAR:-UNSET}`) is caught by the
+  runtime detector — regex can't see it
+- everything runs on your machine — zero telemetry
 ```
 pip install token-hunt
 claude plugin install token-hunt@tokenhunt
 ```
-
-<p align="center">
-  <a href="https://tokenhunt.dev">tokenhunt.dev</a> ·
-  <a href="https://tokenhunt.dev/docs">docs</a> ·
-  <a href="https://tokenhunt.dev/changelog">changelog</a> ·
-  <a href="https://x.com/tokenhuntdev">@tokenhuntdev</a> · info [at] tokenhunt.dev<br>
-  <sub>BUSL-1.1 · MIT in 2030 · commercial by agreement</sub>
-</p>
