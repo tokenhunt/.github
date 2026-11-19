@@ -7,11 +7,8 @@ zero telemetry. The transcript is the leak surface.
 
 | | |
 |---|---|
-| Site | <https://tokenhunt.dev> |
 | Docs | <https://tokenhunt.dev/docs> |
 | Changelog | <https://tokenhunt.dev/changelog> |
-| X | [@tokenhuntdev](https://x.com/tokenhuntdev) |
-| Email | info@tokenhunt.dev |
 | License | BUSL-1.1 · MIT in 2030 · commercial by agreement |
 
 ## The products
